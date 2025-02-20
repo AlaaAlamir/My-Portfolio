@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>My Portfolio</title>
+            <link rel="stylesheet" href="MyFinalProject.css">
+    </head>
+    <body>        
+        <header class="header">
+            <div class="user-info">
+                <h2>ِAlaa Alamir</h2>
+                <div class="contact-info">
+                <p>&#9993; alaas.alamir@gmail.com</p>
+                <p><i class="fa fa-phone"></i> +966530000000</p>
+            </div>
+            </div>
+        
+        <nav class="navbar">
+            <a href="index.html"><i class="fa fa-home"></i></a>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#recommendations">Recommendations</a>
+        </nav>
+    </header>
+             
+        <section id="about">
+            <div class="about-container">
+            <img src="https://media.istockphoto.com/id/2015429231/vector/vector-flat-illustration-in-black-color-avatar-user-profile-person-icon-profile-picture.jpg?s=612x612&w=0&k=20&c=Wu70OARg2npxWy5E22_ZLneabuTafvV_6avgYPhWOoU="
+             alt="Profile Image" class="profile-img">
+             <div class="about-text">
+            <h1>Hi, I'm Alaa Alamir!</h1>
+            <p>
+                As a Software Engineering student passionate about learning 
+                new skills, I am continuously exploring the ever-evolving world 
+                of technology. I thrive on solving complex problems, developing 
+                innovative solutions, and enhancing my programming expertise. 
+                With a strong foundation in software development, I am eager 
+                to expand my knowledge in areas like UX/UI, Web Development,
+                 and Game Design. 
+            </p>
+             </div>
+        </div>
+        </section> 
+        <section id="skills">
+            <div class="skills-head">
+                <h1>Skills</h1>
+            </div>
+        <div class="skills-container">
+            <div class="skill">
+                <img src="https://quantumzeitgeist.com/wp-content/uploads/pythoned.png" alt="Python">
+                <p>Python</p>
+                <h5>1 Year Experience</h5>
+            </div>
+            <div class="skill">
+                <img src="https://static.vecteezy.com/system/resources/previews/013/313/458/non_2x/html-icon-3d-rendering-illustration-vector.jpg" alt="html">
+                <p>HTML</p>
+                <h5>.5 Year Experience</h5>
+            </div>
+            <div class="skill">
+                <img src="https://education.oracle.com/file/general/p-80-java.png" alt="Java">
+                <p>Java</p>
+                <h5>2 Years Experience</h5>
+            </div>
+            <div class="skill">
+                <img src="https://img-resize-cdn.joshmartin.ch/768x0%2Cc3537b9f46b5f6055fbc8b4cd03b6b2cc63fc2eefd3d8cd9f0c9f99a5933e496/https://joshmartin.ch/app/uploads/2017/10/css3.svg" alt="css">
+                <p>CSS</p>
+                <h5>.5 Year Experience</h5>
+            </div>
+        </div>
+        </section>
+
+        <br>
+        <br>
+
+        <section id="projects">
+            <div class="project-head">
+                <h1>Projects</h1>
+            </div>
+            <div class="project">
+                <h3>Unit Converter</h3>
+                <p>Converting temperature, currency, or length units</p>
+            </div>
+            <div class="project">
+                <h3>To-Do List App</h3>
+                <p>A simple web app to add, remove, and mark tasks as complete</p>
+            </div>
+            <div class="project">
+                <h3>Random Quote Generator</h3>
+                <p>Displays a random motivational quote with each refresh</p>
+            </div>
+        </section>
+
+        <br>
+        <br>
+
+        <section id="recommendations">
+            <div class="recommendations-head">
+                <h1>Recommendations</h1>
+            </div>
+        <div class="recommendations-container">
+            <div class="recommendations">
+                <p>" A highly motivated software engineering student with a passion for continuous learning and problem-solving. Always eager to explore new technologies and improve coding skills. "</p>
+            </div>
+            <div class="recommendations">
+                <p>" An excellent team player with great communication skills, making collaboration on projects smooth and efficient. "</p>
+            </div>
+            <div class="recommendations">
+                <p>" Continuously seeks feedback and uses it as a tool for improvement. Open to new challenges and always eager to grow. "</p>
+            </div>
+        </div>
+        </section>
+
+        <br>
+        <div class="recommendations-h3">
+            <h3>Leave a Recommendation</h3>
+        </div>
+        <form id="recommendation-form">
+            <div class="recommendations-form">
+                <textarea id="recommendation-text" placeholder="Write your recommendation..."></textarea>
+                <button type="submit">Submit</button> 
+            </div> 
+        </form>
+
+            <div id="success-msg" class="success-message">Your recommendation has been submitted successfully!</div>
+    
+            <div id="rec-container" class="recommendations-container"></div>
+
+            <button id="back-to-top" class="back-to-top">⬆</button>
+
+        <script src="MyFinalProject.js">
+            document.getElementById("recommendation-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                let newRec = document.getElementById("recommendation-text").value;
+                if (newRec.trim() !== "") {
+                    let recList = document.getElementById("rec-list");
+                    let newItem = document.createElement("li");
+                    newItem.textContent = newRec;
+                    recList.appendChild(newItem);
+                    document.getElementById("recommendation-text").value = "";
+        
+                    let successMsg = document.getElementById("success-msg");
+                    successMsg.style.display = "block";
+                    setTimeout(() => { successMsg.style.display = "none"; }, 3000); 
+                }
+            });
+        </script>
+    </body>
+</html>
